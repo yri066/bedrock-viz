@@ -20,7 +20,7 @@ namespace mcpe_viz {
         // new logger output file
         std::filesystem::path logFile() const { return this->outputDir / "bedrock_viz.log"; }
         std::filesystem::path fnJs() const { return this->outputDir / "output.js"; }
-        std::filesystem::path fnGeoJSON() const { return this->outputDir / "output.geojson";  }
+        std::filesystem::path fnGeoJSON() const { return this->outputDir / "outputgeo.json";  }
 
         // per-dimension filenames
         std::string fnLayerTop[kDimIdCount];
