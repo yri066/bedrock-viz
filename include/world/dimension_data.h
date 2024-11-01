@@ -419,20 +419,18 @@ namespace mcpe_viz {
                         /*
               from: https://minecraft.wiki/w/Slime_chunk
               Random rnd = new Random(seed +
-              (long) (xPosition * xPosition * 0x4c1906) +
-              (long) (xPosition * 0x5ac0db) +
-              (long) (zPosition * zPosition) * 0x4307a7L +
-              (long) (zPosition * 0x5f24f) ^ 0x3ad8025f);
+              (int) (xPosition * xPosition * 0x4c1906) +
+              (int) (xPosition * 0x5ac0db) +
+              (int) (zPosition * zPosition) * 0x4307a7L +
+              (int) (zPosition * 0x5f24f) ^ 0x3ad8025f);
               return rnd.nextInt(10) == 0;
             */
                         rndseed =
                             (worldSeed +
-                            (int64_t)(chunkX * chunkX * (int64_t)0x4c1906) +
-                                (int64_t)(chunkX * (int64_t)0x5ac0db) +
-                                (int64_t)(chunkZ * chunkZ * (int64_t)0x4307a7) +
-                                (int64_t)(chunkZ * (int64_t)0x5f24f)
-                                )
-                            ^ 0x3ad8025f;
+                                (int32_t)(chunkX * chunkX * 0x4c1906) +
+                                (int32_t)(chunkX * 0x5ac0db) +
+                                (int32_t)(chunkZ * chunkZ) * 0x4307a7L +
+                                (int32_t)(chunkZ * 0x5f24f) ^ 0x3ad8025fL);
                         rnd.setSeed(rndseed);
                         slimeChunkFlag = (rnd.nextInt(10) == 0);
 
